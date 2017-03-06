@@ -127,7 +127,7 @@ def gen_listings(keys, floats):
 
 def read_partitions():
     to_return = {}
-    with open("partition.txt", 'r') as f:
+    with open("partition_correct.txt", 'r') as f:
         for l in f:
             if l:
                 node = map(int, l.strip().split(" "))

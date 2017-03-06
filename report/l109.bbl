@@ -1,9 +1,24 @@
-\begin{thebibliography}{2}
+\begin{thebibliography}{4}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Backstrom et~al.(2010)Backstrom, Sun, and Marlow]{backstrom2010find}
+Lars Backstrom, Eric Sun, and Cameron Marlow.
+\newblock Find me if you can: improving geographical prediction with social and
+  spatial proximity.
+\newblock In \emph{Proceedings of the 19th international conference on World
+  wide web}, pages 61--70. ACM, 2010.
+
+\bibitem[Lambiotte et~al.(2008)Lambiotte, Blondel, De~Kerchove, Huens, Prieur,
+  Smoreda, and Van~Dooren]{lambiotte2008geographical}
+Renaud Lambiotte, Vincent~D Blondel, Cristobald De~Kerchove, Etienne Huens,
+  Christophe Prieur, Zbigniew Smoreda, and Paul Van~Dooren.
+\newblock Geographical dispersal of mobile communication networks.
+\newblock \emph{Physica A: Statistical Mechanics and its Applications},
+  387\penalty0 (21):\penalty0 5317--5325, 2008.
 
 \bibitem[Online({\natexlab{a}})]{gentrification}
 Online.

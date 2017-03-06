@@ -1,0 +1,31 @@
+\subsection{Foursquare Dataset}
+Foursquare dataset describes check-ins in New York City from \color{red} XXX to XXX.\color{black} 
+The dataset consists of two tables.
+Each row of the first table describes a venue and contains the following information:
+\begin{itemize}
+\item id
+\item location represented as a Mercator coordinate
+\item category (e.g. `Bakery', `Apartment Building')
+\item total number of users who checked in
+\item total check-ins
+\item name (e.g. `Le Pain Quotidien')
+\end{itemize}
+Each row in the second table describes a transition made by a user and contains the following information:
+\begin{itemize}
+\item id of the first venue 
+\item id of the second venue
+\item time of the first check-in
+\item time of the second check-in
+\end{itemize}
+Note that there is no information about which user made this particular transition.
+\subsection{Airbnb Dataset}
+Airbnb dataset was compiled by Murray Cox from publically available information on Airbnb website to build \emph{Inside Airbnb}~\citep{insideairbnb}, a tool to explore how Airbnb is used in various cities, including New York City.
+The motivation of creating the tool was to demonstrate how Airbnb could be harmful to the residential housing.
+The dataset has been used to expose various other social issues such as racial gentrification~\citep{gentrification}.
+There are four tables and each describes:
+\begin{itemize}
+\item listings
+\item when each listing is made available by the owner
+\item user reviews for listings
+\item name of the neighbourhoods
+\end{itemize}

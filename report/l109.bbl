@@ -1,4 +1,4 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{10}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -12,6 +12,30 @@ Lars Backstrom, Eric Sun, and Cameron Marlow.
 \newblock In \emph{Proceedings of the 19th international conference on World
   wide web}, pages 61--70. ACM, 2010.
 
+\bibitem[Blondel et~al.(2008)Blondel, Guillaume, Lambiotte, and
+  Lefebvre]{blondel2008fast}
+Vincent~D Blondel, Jean-Loup Guillaume, Renaud Lambiotte, and Etienne Lefebvre.
+\newblock Fast unfolding of communities in large networks.
+\newblock \emph{Journal of statistical mechanics: theory and experiment},
+  2008\penalty0 (10):\penalty0 P10008, 2008.
+
+\bibitem[Cansoy and Schor(2016)]{cansoy2016gets}
+Mehmet Cansoy and Juliet Schor.
+\newblock Who gets to share in the “sharing economy”: Understanding the
+  patterns of participation and exchange in airbnb.
+\newblock \emph{Unpublished Paper, Boston College}, 2016.
+
+\bibitem[Edelman and Luca(2014)]{edelman2014digital}
+Benjamin~G Edelman and Michael Luca.
+\newblock Digital discrimination: The case of airbnb. com.
+\newblock 2014.
+
+\bibitem[Gant(2016)]{gentrification}
+Agust{\'\i}n~C{\'o}cola Gant.
+\newblock Holiday rentals: The new gentrification battlefront.
+\newblock \emph{Sociological Research Online}, 21\penalty0 (3):\penalty0 10,
+  2016.
+
 \bibitem[Lambiotte et~al.(2008)Lambiotte, Blondel, De~Kerchove, Huens, Prieur,
   Smoreda, and Van~Dooren]{lambiotte2008geographical}
 Renaud Lambiotte, Vincent~D Blondel, Cristobald De~Kerchove, Etienne Huens,
@@ -20,10 +44,18 @@ Renaud Lambiotte, Vincent~D Blondel, Cristobald De~Kerchove, Etienne Huens,
 \newblock \emph{Physica A: Statistical Mechanics and its Applications},
   387\penalty0 (21):\penalty0 5317--5325, 2008.
 
-\bibitem[Online({\natexlab{a}})]{gentrification}
+\bibitem[Noulas et~al.(2011)Noulas, Scellato, Mascolo, and
+  Pontil]{noulas2011empirical}
+Anastasios Noulas, Salvatore Scellato, Cecilia Mascolo, and Massimiliano
+  Pontil.
+\newblock An empirical study of geographic user activity patterns in
+  foursquare.
+\newblock \emph{ICwSM}, 11:\penalty0 70--573, 2011.
+
+\bibitem[Online({\natexlab{a}})]{community}
 Online.
-\newblock Inside airbnb.
-\newblock \url{http://insideairbnb.com/face-of-airbnb-nyc/ }, {\natexlab{a}}.
+\newblock Community detection for networkx.
+\newblock \url{http://perso.crans.org/aynaud/communities }, {\natexlab{a}}.
 \newblock Accessed:2017-03-03.
 
 \bibitem[Online({\natexlab{b}})]{insideairbnb}

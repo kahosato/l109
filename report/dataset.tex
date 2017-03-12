@@ -1,14 +1,14 @@
 \subsection{Foursquare Dataset}
-Foursquare dataset describes check-ins in New York City from \color{red} XXX to XXX.\color{black} 
-The dataset consists of two tables.
+As stated previously, the Foursquare dataset contains two tables.
+
 Each row of the first table describes a venue and contains the following information:
 \begin{itemize}
 \item id
 \item location represented as a Mercator coordinate
-\item category (e.g. `Bakery', `Apartment Building')
+\item category (e.g. ``Bakery'', ``Apartment Building'')
 \item total number of users who checked in
 \item total check-ins
-\item name (e.g. `Le Pain Quotidien')
+\item name (e.g. ``Le Pain Quotidien'')
 \end{itemize}
 Each row in the second table describes a transition made by a user and contains the following information:
 \begin{itemize}
@@ -17,14 +17,20 @@ Each row in the second table describes a transition made by a user and contains 
 \item time of the first check-in
 \item time of the second check-in
 \end{itemize}
+The dataset is anonymised and therefore one can not know which user made the transition.
 \subsection{Airbnb Dataset}
-Airbnb dataset was compiled by Murray Cox from publically available information on Airbnb website to build \emph{Inside Airbnb}~\citep{insideairbnb}, a tool to explore how Airbnb is used in various cities, including New York City.
-The motivation of creating the tool was to demonstrate how Airbnb could be harmful to the residential housing.
-The dataset has been used to expose various other social issues such as gentrification~\citep{gentrification} and digital discrimination~\citep{edelman2014digital}.
 There are four tables and each describes:
 \begin{itemize}
 \item listings
-\item when each listing is made available by the owner
+\item on which day each listing is marked available by the owner in 2017
 \item user reviews for listings
-\item name of the neighbourhoods
+\item name of the neighbourhoods (e.g. ``SoHo'')
 \end{itemize}
+The information available for each listing is very rich and consists of 95 columns, including the id, a Mercator coordinate of the location and the neighbourhood it belongs to.
+
+\subsection{Limitation}
+The material of this course has mainly focused on analysing social networks and how information, influence and disease would flow in the networks. In the datasets I have there was no social information one could extract.
+
+Though Foursquare is a social network service, the data is anonymised and one can not pin down which transition belongs to which user. If the dataset contained such information and the social structure of the users, one could have constructed an urban geo-social network model and studied interesting social properties of venues such as diversity of the visitors or to what extent it acts as a social broker~\citep{hristova2016measuring}.
+
+The Airbnb dataset contains information such as the id of the host or the id of the author of a review. However, Airbnb is not a platform for social interaction; it is simply a marketplace and there is no concept of friends or a complex interaction between users that can be seen in other social networks.

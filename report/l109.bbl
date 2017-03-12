@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{17}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -36,6 +36,21 @@ Agust{\'\i}n~C{\'o}cola Gant.
 \newblock \emph{Sociological Research Online}, 21\penalty0 (3):\penalty0 10,
   2016.
 
+\bibitem[Hristova et~al.(2016)Hristova, Williams, Musolesi, Panzarasa, and
+  Mascolo]{hristova2016measuring}
+Desislava Hristova, Matthew~J Williams, Mirco Musolesi, Pietro Panzarasa, and
+  Cecilia Mascolo.
+\newblock Measuring urban social diversity using interconnected geo-social
+  networks.
+\newblock In \emph{Proceedings of the 25th International Conference on World
+  Wide Web}, pages 21--30. International World Wide Web Conferences Steering
+  Committee, 2016.
+
+\bibitem[Jiang et~al.(2009)Jiang, Yin, and Zhao]{jiang2009characterizing}
+Bin Jiang, Junjun Yin, and Sijian Zhao.
+\newblock Characterizing the human mobility pattern in a large street network.
+\newblock \emph{Physical Review E}, 80\penalty0 (2):\penalty0 021136, 2009.
+
 \bibitem[Lambiotte et~al.(2008)Lambiotte, Blondel, De~Kerchove, Huens, Prieur,
   Smoreda, and Van~Dooren]{lambiotte2008geographical}
 Renaud Lambiotte, Vincent~D Blondel, Cristobald De~Kerchove, Etienne Huens,
@@ -52,17 +67,41 @@ Anastasios Noulas, Salvatore Scellato, Cecilia Mascolo, and Massimiliano
   foursquare.
 \newblock \emph{ICwSM}, 11:\penalty0 70--573, 2011.
 
-\bibitem[Online({\natexlab{a}})]{community}
+\bibitem[Noulas et~al.(2013)Noulas, Mascolo, and
+  Frias-Martinez]{noulas2013exploiting}
+Anastasios Noulas, Cecilia Mascolo, and Enrique Frias-Martinez.
+\newblock Exploiting foursquare and cellular data to infer user activity in
+  urban environments.
+\newblock In \emph{Mobile Data Management (MDM), 2013 IEEE 14th International
+  Conference on}, volume~1, pages 167--176. IEEE, 2013.
+
+\bibitem[Online()]{community}
 Online.
 \newblock Community detection for networkx.
-\newblock \url{http://perso.crans.org/aynaud/communities }, {\natexlab{a}}.
+\newblock \url{http://perso.crans.org/aynaud/communities }.
 \newblock Accessed:2017-03-03.
 
-\bibitem[Online({\natexlab{b}})]{insideairbnb}
+\bibitem[Online(2015)]{50million}
+Online.
+\newblock Foursquare by the numbers: 60m registered users, 50m maus, and 75m
+  tips to date.
+\newblock
+  \url{http://venturebeat.com/2015/08/18/foursquare-by-the-numbers-60m-registered-users-50m-maus-and-75m-tips-to-date/
+  }, 2015.
+\newblock Accessed:2017-03-10.
+
+\bibitem[Online(2016)]{insideairbnb}
 Online.
 \newblock Inside airbnb.
-\newblock \url{http://insideairbnb.com}, {\natexlab{b}}.
+\newblock \url{http://insideairbnb.com}, 2016.
 \newblock Accessed:2017-03-03.
+
+\bibitem[Rhee et~al.(2011)Rhee, Shin, Hong, Lee, Kim, and Chong]{rhee2011levy}
+Injong Rhee, Minsu Shin, Seongik Hong, Kyunghan Lee, Seong~Joon Kim, and Song
+  Chong.
+\newblock On the levy-walk nature of human mobility.
+\newblock \emph{IEEE/ACM transactions on networking (TON)}, 19\penalty0
+  (3):\penalty0 630--643, 2011.
 
 \bibitem[Saram{\"a}ki et~al.(2007)Saram{\"a}ki, Kivel{\"a}, Onnela, Kaski, and
   Kertesz]{saramaki2007generalizations}
@@ -71,5 +110,21 @@ Jari Saram{\"a}ki, Mikko Kivel{\"a}, Jukka-Pekka Onnela, Kimmo Kaski, and Janos
 \newblock Generalizations of the clustering coefficient to weighted complex
   networks.
 \newblock \emph{Physical Review E}, 75\penalty0 (2):\penalty0 027105, 2007.
+
+\bibitem[Scellato et~al.(2011)Scellato, Noulas, Lambiotte, and
+  Mascolo]{scellato2011socio}
+Salvatore Scellato, Anastasios Noulas, Renaud Lambiotte, and Cecilia Mascolo.
+\newblock Socio-spatial properties of online location-based social networks.
+\newblock \emph{ICWSM}, 11:\penalty0 329--336, 2011.
+
+\bibitem[Vazquez-Prokopec et~al.(2013)Vazquez-Prokopec, Bisanzio, Stoddard,
+  Paz-Soldan, Morrison, Elder, Ramirez-Paredes, Halsey, Kochel, Scott,
+  et~al.]{vazquez2013using}
+Gonzalo~M Vazquez-Prokopec, Donal Bisanzio, Steven~T Stoddard, Valerie
+  Paz-Soldan, Amy~C Morrison, John~P Elder, Jhon Ramirez-Paredes, Eric~S
+  Halsey, Tadeusz~J Kochel, Thomas~W Scott, et~al.
+\newblock Using gps technology to quantify human mobility, dynamic contacts and
+  infectious disease dynamics in a resource-poor urban environment.
+\newblock \emph{PloS one}, 8\penalty0 (4):\penalty0 e58802, 2013.
 
 \end{thebibliography}

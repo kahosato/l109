@@ -8,7 +8,7 @@ Figure \ref{fig:degree-distribution} shows the complementary cumulative distribu
 \end{figure}
 As stated previously, the weight of an edge is an inverse of the distance between venues, which represent the strength of association between two venues. Then weighted degree is how strongly a venue is associated with all the other venues, therefore shows the relevance of a venue. The power law behaviour seen as the straight line in Figure \ref{fig:degree-distribution} shows that the relevance of venues is largely heterogeneous and could be explained by rich-get-richer model. Indeed, it is perfectly plausible that the higher the relevance of a venue is, the more people visit the location.
 
-One may say that the total number of check-in represents the popularity of a venue. Expectedly, this also exhibits the power law distribution as can be seen in Figure \ref{fig:checkin-distribution}, which is CCDF of the proportion of nodes whose total check-in count is larger than the given count.
+As stated previously, the total number of check-in has been used as an indicator of the popularity of a venue~\citep{noulas2011empirical}. Expectedly, this also exhibits the power law distribution as can be seen in Figure \ref{fig:checkin-distribution}, which is CCDF of the proportion of nodes whose total check-in count is larger than the given count.
 \begin{figure}
 \centering
 \includegraphics[scale=0.5]{../checkin_new_ccdf.png}
@@ -35,7 +35,6 @@ Relevance and popularity seems to be two concepts that could be related somehow.
 Recall that we defined the weight of the edge to be an inverse of the distance between two nodes which it connects.
 Since distance is much more intuitive metric to consider, we look at the distribution of the inverse of the weight (i.e. distance) in this section.
 Figure \ref{fig:distance-ccdf} shows the CCDF of the proportion of nodes whose distance is larger than the given distance, and Figure \ref{fig:distance-distribution} shows the frequency distribution of the distance.
-\color{red} We can interpreted these graphs to show the relationship between the distance and the likeliness of checking in. \color{black}
 Unlike the total check-in counts or the degree which follows the power law distribution, it shows an exponential distribution with a faster decaying tail.
 This is perhaps due to the fact that the check-ins in the dataset are limited to ones in New York, which imposes an upper limit.
 \begin{figure}
@@ -61,5 +60,4 @@ C_i = \frac{2}{k_i(k_i-1)}\sum_{j, k}^{}(\widetilde{w}_{i, j}\widetilde{w}_{j, k
 \end{align*}
 where $\widetilde{w}_{i, j}$ is a weight of the edge between $i$ and $j$ normalised with respect to the largest weight of a edge in the network. 
 The clustering coefficient of $\mathcal{G}$ is $7.99\mathrm{e}{-5}$ which is very low. This is perhaps is because many triangles include at least one edge with very low weight, which pulls down the intensity of the triangle.
-The clustering coefficient of an unweighted graph $\mathcal{G}_u$, which has the same edges and nodes as $\mathcal{G}$ is $0.135$. This is significantly higher than the clustering coefficient of an unweighted random graph $2.85\mathrm{e}{-4}$with the same number of nodes and the average degree as $\mathcal{G}_u$. The clustering coefficient of  $\mathcal{G}_u$ can be interpreted as the transitivity of the existence of association. In other words, it quantifies the extent to which venue A and C are visited in succession if venue A and B, and venue B and C are visited one after the other.
-\color{red}average path length \color{black}
+The clustering coefficient of an unweighted graph $\mathcal{G}_u$, which has the same edges and nodes as $\mathcal{G}$ is $0.135$. This is significantly higher than the clustering coefficient of an unweighted random graph $2.85\mathrm{e}{-4}$with the same number of nodes and the average degree as $\mathcal{G}_u$. The clustering coefficient of  $\mathcal{G}_u$ can be interpreted as the transitivity of the \emph{existence} of association. In other words, it quantifies the extent to which venue A and C are visited in succession if venue A and B, and venue B and C are visited one after the other.

@@ -1,14 +1,16 @@
-Especially in a large city there is a certain notion of \emph{neighbourhood}. The notion of neighbourhood is usually somewhat fuzzy, and often there is no well-defined geographical border between them. However, people do seem to have a general consensus on which venue belongs to which area. I argue that the notion of neighbourhood can be defined in terms of the association between venues. For instance, one neighbourhood where the majority of the population belongs to a certain socio-economic group would have many stores or restaurants which are well supported by such a group. We can say that these stores and restaurants should have a strong association among each other. Then, conversely, it must be possible to understand the general consensus of what the neighbourhood is from $\mathcal{G}$ by community detection assuming that the edge indeed models the association. We then see whether the definition of neighbourhood mined from $\mathcal{G}$ corresponds to neighbourhood defined by Airbnb.
-\subsection{Community Detection}
-In order to detect the community in $\mathcal{G}$, I used community detection module \citep{community} which implements the louvain method proposed by \cite{lambiotte2008geographical}. This resulted to 4687 communities. Many consists of a very small number of venues, which are not big enough to be called a neighbourhood. In order to avoid the noise introduced by them, I filtered out the communities with fewer than 1000 venues. This resulted to 30 communities. Figure \ref{fig:fsq-comm} shows Foursquare venues coloured according to the community they belong to. As can be seen, most of the venues which are geographically located closely to each other are in the same community, as the edge that connect them tend to have a higher weight. We can also observe some exceptions. These venue perhaps have at least one edge bearing a high weight with a venue that is geographically far, because there are multiple transitions between them. From here on, we refer to the communities detected as \emph{Foursquare neighbourhood}, and neighbourhood defined by Airbnb as \emph{Airbnb neighbourhood}.
+%Especially in a large city there is a certain notion of \emph{neighbourhood}. The notion of neighbourhood is usually somewhat fuzzy, and often there is no well-defined geographical border between them. However, people do seem to have a general consensus on which venue belongs to which area. I argue that the notion of neighbourhood can be defined in terms of the association between venues. For instance, one neighbourhood where the majority of the population belongs to a certain socio-economic group would have many stores or restaurants which are well supported by such a group. We can say that these stores and restaurants should have a strong association among each other. Then, conversely,
+Assuming that the edge in $\mathcal{G}$ indeed models the association between venues, we can regard a community in $\mathcal{G}$ as a neighbourhood. We then see whether this definition of neighbourhood mined from $\mathcal{G}$, which I refer to as \emph{Foursquare neighbourhood} corresponds to neighbourhood defined by Airbnb, which I refer to as \emph{Airbnb neighbourhood}. 
+\subsection{Extracting Foursquare Neighbourhood}
+In order to detect the community in $\mathcal{G}$, I used community detection module \citep{community} which implements the louvain method proposed by \cite{lambiotte2008geographical}. This resulted to 4687 communities. Many consists of a very small number of venues, which are not big enough to be called a neighbourhood. In order to avoid the noise introduced by them, I filtered out the communities with fewer than 1000 venues. This resulted to 30 communities, which we use as Foursquare neighbourhoods. Figure \ref{fig:fsq-comm} shows Foursquare venues coloured according to the Foursquare neighbourhood they belong to. As can be seen, most of the venues which are geographically located closely to each other are in the same community, as the edge that connect them tend to have a higher weight. We can also observe some exceptions. These venue perhaps have at least one edge bearing a high weight with a venue that is geographically far, because there are multiple transitions between them. 
 \begin{figure}
 \centering
 \includegraphics[width=\columnwidth]{../fsq_foo_2.png}
-\caption{Foursquare venues coloured according to the community detected using the louvain method}
+\caption{Foursquare Venues Coloured According to the Foursquare Neighbourhood}
 \label{fig:fsq-comm}
 \end{figure}
 \subsection{Foursquare neighbourhood for Airbnb Listing}
 %I assign on each Airbnb listing the same Foursquare neighbourhood that the closest Foursquare venue to the listing belongs to. This is admittedly a very simple measure. Alternatively, one could consider multiple closest Foursquare venues and take the majority.
+To draw a comparison between Foursquare neighbourhoods and Airbnb neighbourhoods, I assign a Foursquare neighbourhood on each listing. This section describes the procedure.
 Let
 \begin{align*}
 S(l, n_{fsq}) = S(n_{fsq}) \cap k\_closest\_fsq(l, k)
@@ -21,23 +23,23 @@ where
 \begin{align*}
 score(l, n_{fsq}) =  \sum_{v \in S(l, n_{fsq})}distance(l, v)^{-1}
 \end{align*}
-Figure \ref{fig:abnb-comm} shows the Airbnb listings coloured according to the Foursquare neighbourhood they were assigned to, and Figure \ref{fig:abnb-nbh} shows the listings coloured according to the Airbnb neighbourhood they belong to. The colour used for each Foursquare neighbourhood is the same for both Figure \ref{fig:fsq-comm} and Figure \ref{fig:abnb-comm}. Note that Airbnb listings span over a much smaller region, which is why these figures look largely different from Figure \ref{fig:fsq-comm}. 
+Figure \ref{fig:abnb-comm} shows the Airbnb listings coloured according to the Foursquare neighbourhood they were assigned to, and Figure \ref{fig:abnb-nbh} shows the listings coloured according to the Airbnb neighbourhood they belong to. The colour used for each Foursquare neighbourhood is the same for both Figure \ref{fig:fsq-comm} and Figure \ref{fig:abnb-comm}. Note that Airbnb listings span over a much smaller region, which is why these figures look largely different from Figure \ref{fig:fsq-comm}. Namely, Figure \ref{fig:fsq-comm} includes the west bank of Hudson River. 
 \begin{figure}
 \centering
 \includegraphics[width=\columnwidth]{../foo_3.png}
-\caption{Airbnb listings coloured according to their Foursquare neighbourhood}
+\caption{Airbnb Listings Coloured According to Their Foursquare Neighbourhood}
 \label{fig:abnb-comm}
 \end{figure}
 \begin{figure}
 \centering
 \includegraphics[width=\columnwidth]{../nbh_foo.png}
-\caption{Airbnb listings coloured according to their Airbnb neighbourhood}
+\caption{Airbnb Listings Coloured According to Their Airbnb Neighbourhood}
 \label{fig:abnb-nbh}
 \end{figure}
 \subsection{Comparing Two Definitions}
 First observation one can make is that the Airbnb neighbourhood is more fine-grained with 230 neighbourhoods than the Foursquare neighbourhood with 30 neighbourhoods. This is not due to the threshold value of 1000 venues that I used to filter the neighbourhoods. With the threshold of 1 venue, there would have been 180 neighbourhoods which are already fewer than the number of the Airbnb neighbourhoods. This may though be related to the rate of the decay of the weight with respect to the distance. For instance, if I chose to define $w_{i, j}$ to be inversely proportionate to $distance(i, j)^2$, the Foursquare neighbourhood potentially would have been more fine-grained.
 
-Recall that there are more Foursquare neighbourhoods. One can say that these two definitions have a high overlap if a given Foursquare neighbourhood is such that it groups up multiple entire Airbnb neighbourhoods without splitting them. To quantify the overlap, I first assigned on each Airbnb neighbourhood a Foursquare neighbourhood to which the highest number of its listings were assigned to:
+One can say that these two definitions have a high overlap if a given Foursquare neighbourhood groups up multiple entire Airbnb neighbourhoods without splitting them. To quantify the overlap, I first assigned on each Airbnb neighbourhood a Foursquare neighbourhood to which the highest number of its listings were assigned to:
 \begin{align*}
 &assign\_fsq\_nbh(n_{a}) = \\
 &\argmax_{n_fsq} | \{ l | l \in listings(n_{a}), assign\_fsq\_nbh(l) = n_{fsq}\} |
@@ -50,10 +52,13 @@ where $listings(n_{a})$ returns a set of Airbnb listings which belong to $n_{a}$
 where $nbh\_a(l)$ returns the Airbnb neighbourhood that $l$ belongs to.
 
 As a result, I found that $overlap(S_a) = 0.653$, which is considerably higher than $3.33\mathrm{e}{-02}$ which what it would have been if a Foursquare neighbourhood was assigned at random on a listing. From this, we can conclude that Foursquare neighbourhood is such that it groups multiple Airbnb neighbourhoods and two definitions of neighbourhood somewhat overlaps.
-\subsection{Popularity}
-The total number of check-in is an indicator of the popularity of a Foursquare venue~\citep{noulas2011empirical}. One may consider an area to be a large Foursquare venue and naturally quantify its popularity as a sum of the number of check-in for Foursquare venues which belong to it. Let this measure of popularity of an area $n$ be $p_{fsq}(n)$.
-On the contrary, there is no agreed way to quantify the popularity of an area using the information about Airbnb listings. In this section, I investigate various statistics of the Airbnb listings which belongs to an area, and see if any of them could be as good as $p_{fsq}(n)$ to quantify the popularity. I do this by computing the statistics on a Foursquare neighbourhood $n$ and measuring the correlation with $p_{fsq}(n)$.
-\subsubsection{Candidate Statistics}
+\section{Popularity}
+%The total number of check-in is an indicator of the popularity of a Foursquare venue~\citep{noulas2011empirical}. One may consider an area to be a large Foursquare venue and naturally quantify its popularity as a sum of the number of check-in for Foursquare venues which belong to it. 
+As stated previously, the sum of the number of check-ins for Foursquare venues which belong to an area may quantify the popularity of the area. Let this measure of popularity of an area $n$ be $p_{fsq}(n)$.
+
+%On the contrary, there is no agreed way to quantify the popularity of an area using the information about Airbnb listings. 
+I first propose various statistics on a set of Airbnb listing that could model the popularity. Then I evaluate its relevance by measuring the correlation with $p_{fsq}$.
+\subsection{Candidate Statistics}
 Intuitively, a listing is popular if there is more activity; that is, if it is occupied more frequently. Unfortunately, the Airbnb dataset does not offer such information. In the previous works, the activity of a listing was estimated by the number of reviews per month~\citep{cansoy2016gets, insideairbnb}. Airbnb guests may leave a review after their stay. Although it is optional and therefore not all the guests do so, this may be used as an indicator of Airbnb activity. 
 
 Another possible indicator of the popularity of a listing would be the monthly income it generates. Again, this information is not available from the dataset. In the previous works, the minimum income per month was used instead. This can be computed as the product of the minimum length of stay, price and the reviews per month~\citep{cansoy2016gets, insideairbnb}. 
@@ -66,7 +71,7 @@ I propose the following statistics to measure the popularity of an area:
 \item $p_{a4}(n)$\\ Total minimum income per month earned by all the listings in an area $n$
 \end{enumerate}
 \label{sec:pop-measure}
-\subsubsection{Results}
+\subsection{Results}
 Figure \ref{fig:checkin_avg_reviews}, \ref{fig:checkin_ttl_reviews}, \ref{fig:checkin_avg_min_income} and \ref{fig:checkin_ttl_min_income} are scatter plots where each point represents a Foursquare neighbourhood. The x-coordinate represents its total check-in counts for the venues and the y-coordinate represents the respective candidate metric proposed in \ref{sec:pop-measure}.
 
 There is no clear correlation between $p_{a1}(n)$ that can be read from Figure \ref{fig:checkin_avg_reviews}. The other statistics, though heteroskedastic, suggest a linear correlation with $p_{fsq}(n)$.
@@ -127,6 +132,6 @@ $p_{a4}$ & 0.697 & $1.88\mathrm{e}{-05}$     \\ \hline
 \begin{figure}
 \centering
 \includegraphics[width=\columnwidth]{../checkin_avg_length.png}
-\caption{Total Check-in Count and Average Minimum of Length of Stay of Listings in Foursquare Neighbourhoods}
+\caption{Total Check-in Count and Average Minimum Length of Stay of Listings in Foursquare Neighbourhoods}
 \label{fig:checkin_avg_length}
 \end{figure}
